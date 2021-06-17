@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management Company</title>
+</head>
+<body>
+    <h1 onclick="alert('Someone clicked me')">Exploring Event</h1>
+    <p onclick="alert(23)">Lorem ipsum dolor sit amet.</p>
+    <button onclick="handleClick()">Open console and click me</button>
+    <button onclick="date()">Click to know date</button>
+    <button onmouseover="over()">Mouse over</button>
+    <button onmousemove="over()">Mouse move</button>
+    <button onmouseout="over()">Mouse out</button>
+    <h1>Add event listener by javaScript</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolor.</p>
+    <p>A, corporis alias. Sapiente alias explicabo voluptas nisi autem consectetur.</p>
+    <p>At distinctio eligendi saepe rem autem enim dolor doloribus in!</p>
+
+    <button id="first-btn">Button -1</button>
+    <button id="second-btn">Button -2</button>
+    <button id="third-btn">Button -3</button>
+    <button id="fourth-btn">Button -4</button>
+
+    <script>
+        function handleClick(){
+            console.log('Why you click me?');
+        }
+        function date(){
+            console.log(new Date());
+        }
+        function over(){
+            console.log('someone mouse over');
+        }
+
+        
+        const firstButton = document.getElementById('first-btn');
+            firstButton.onclick = function(){
+                console.log('first button clicked by someone');
+            }
+            
+            function onClickBackground(){
+                document.body.style.backgroundColor = 'cyan';
+            }
+            const secondButton = document.getElementById('second-btn');
+            secondButton.onclick = onClickBackground;
+            
+            function onClickColor(){
+                document.body.style.color = 'tomato';
+            }
+            const thirdButton = document.getElementById('third-btn');
+            thirdButton.addEventListener('click', onClickColor);
+
+            document.getElementById('fourth-btn').addEventListener('click', function(){
+                document.body.style.fontFamily = 'tahoma';
+            })
+
+    </script>
+</body>
+</html>

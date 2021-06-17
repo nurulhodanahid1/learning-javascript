@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble</title>
+</head>
+<body>
+    <div id="container">
+        <h1>My List</h1>
+        <ul id="my-list">
+            <li id="list-item-1">Lorem, ipsum dolor.</li>
+            <li id="list-item-2">Exercitationem, eum asperiores!</li>
+            <li id="list-item-3">Quaerat, ratione aut!</li>
+            <li id="list-item-4">Nam, totam explicabo.</li>
+            <li id="list-item-5">Libero, corporis explicabo.</li>
+        </ul>
+    </div>
+                <!--Event Bubble: Propagating an event from the lowest to the upward-->
+    <script>
+        document.getElementById('list-item-1').addEventListener('click', function(event){
+            console.log('first item clicked');
+            event.stopPropagation();  // uporer ghulu ke r call korbe na....ekhanei atkie dea holo;
+        })
+        document.getElementById('list-item-2').addEventListener('click', function(){
+            console.log('first item clicked');
+        })
+        document.getElementById('my-list').addEventListener('click', function(){
+            console.log('my list clicked');
+        })
+        document.getElementById('container').addEventListener('click', function(){
+            console.log('container clicked');
+        })
+    </script>
+</body>
+</html>
