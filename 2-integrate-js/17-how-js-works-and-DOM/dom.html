@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        article{
+            border : 2px solid steelblue;
+            margin : 10px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1 title="header">Exploring DOM</h1>
+            <p title="i m not the best" id="first">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam consectetur odio placeat doloremque similique quis debitis?</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </section>
+        <section>
+            <article class="special">
+                <h2>Article Heading 1</h2>
+                <small class="author">Author - 1</small>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ullam.</p>
+            </article>
+            <article class="special">
+                <h2>Article Heading 2</h2>
+                <small class="author">Author - 2</small>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, aliquam?</p>
+            </article>
+            <article class="normal">
+                <h2>Article Heading 3</h2>
+                <small class="author">Author - 3</small>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, vero.</p>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        document.body.style.backgroundColor = "#FFF999";
+        var firstP = document.getElementById('first');
+        firstP.style.color = "green";
+        firstP.setAttribute('title', 'This is the best paragraph')  // change the title
+
+        var authors = document.getElementsByClassName('author');
+        for(var i = 0; i <= authors.length; i++){
+            var items = authors[i];
+            items.innerHTML = 'Writer - ' + (i + 1);
+            items.style.color = 'tomato';
+            items.style.fontSize = '18px';
+            items.setAttribute('title', 'All are the best writer');
+        }
+
+        var articleHeader = document.querySelectorAll('.special h2');
+        for(var i = 0; i <= articleHeader.length; i++){
+            var items = articleHeader[i];
+            items.innerHTML = 'Special Header - ' + (i + 1);
+            items.style.color = 'orange';
+            items.style.fontSize = '30px';
+        }
+
+        var normal = document.querySelector('.normal h2');
+        normal.style.color = "red";
+    </script>
+</body>
+</html>
